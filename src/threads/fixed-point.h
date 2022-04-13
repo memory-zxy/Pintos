@@ -1,0 +1,13 @@
+#define shift_bits 14
+#define ff (1 << shift_bits)
+#define Int_To_Fp(n)   (n)*(ff)
+#define Fp_To_Int_Rtz(x)       (x)/(ff)
+#define Fp_To_Int_Rtn(x)       (x>=0?((x+ff/2)/ff):((x-ff/2)/ff))
+#define Fp_Add(x,y)                    (x)+(y)
+#define Fp_Sub(x,y)                    (x)-(y)
+#define Fp_Add_Int(x,n)            (x)+(n)*(ff)
+#define Fp_Sub_Int(x,n)            (x)-(n)*(ff)
+#define Fp_Mul(x,y)               ((int64_t)x)*y/(ff)
+#define Fp_Mul_Int(x,y)           (x)*(y)
+#define Fp_Div(x,y)                 ((int64_t)x)*(ff)/(y)
+#define Fp_Div_Int(x,y)             (x)/(y)
